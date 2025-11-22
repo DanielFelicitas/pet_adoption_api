@@ -1,4 +1,4 @@
-    {
+{
     "name": "pet_adoption_api_backend",
     "version": "1.0.0",
     "main": "index.js",
@@ -11,7 +11,9 @@
         "cors": "^2.8.5",
         "dotenv": "^16.6.1",
         "express": "^4.21.2",
-        "mongoose": "^8.19.3"
+        "mongoose": "^8.19.3",
+        "swagger-jsdoc": "^6.2.8",
+        "swagger-ui-express": "^5.0.1"
     },
     "devDependencies": {
         "nodemon": "^3.1.10"
@@ -28,4 +30,4 @@
         "url": "https://github.com/DanielFelicitas/Pet-Adoption-project_ITELECT/issues"
     },
     "homepage": "https://github.com/DanielFelicitas/Pet-Adoption-project_ITELECT#readme"
-    }
+}
