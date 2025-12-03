@@ -42,22 +42,23 @@ app.use("/api/v1/pets", petRoutes);
 app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/adoptions", adoptionRoutes);
 
-//swagger documentation route
-app.use("/api-docs", express.static(swaggerUiAssetPath.getAbsoluteFSPath()));
 
-// Serve Swagger UI HTML
+
+// Serve static assets on a separate route
+app.use("/api-docs-assets", express.static(swaggerUiAssetPath.getAbsoluteFSPath()));
+
 app.get("/api-docs", (req, res) => {
   res.send(`
     <!DOCTYPE html>
     <html>
       <head>
         <title>Swagger UI</title>
-        <link href="swagger-ui.css" rel="stylesheet">
+        <link href="/api-docs-assets/swagger-ui.css" rel="stylesheet">
       </head>
       <body>
         <div id="swagger-ui"></div>
-        <script src="swagger-ui-bundle.js"></script>
-        <script src="swagger-ui-standalone-preset.js"></script>
+        <script src="/api-docs-assets/swagger-ui-bundle.js"></script>
+        <script src="/api-docs-assets/swagger-ui-standalone-preset.js"></script>
         <script>
           window.ui = SwaggerUIBundle({
             spec: ${JSON.stringify(swaggerSpec)},
@@ -70,5 +71,6 @@ app.get("/api-docs", (req, res) => {
     </html>
   `);
 });
+
 
 export default app;
