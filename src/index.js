@@ -41,4 +41,6 @@ app.use("/api/v1/adoptions", adoptionRoutes);
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
+
+
+export default app;
