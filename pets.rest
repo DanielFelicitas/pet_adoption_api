@@ -3,7 +3,7 @@
 ####################################
 
 ### Get all pets
-GET http://localhost:3000/api/v1/pets
+GET https://petadoptionapi.vercel.app/api/v1/pets
 
 
 
@@ -20,16 +20,16 @@ Content-Type: application/json
 }
 
 ### Get pet by ID
-GET http://localhost:3000/api/v1/pets/6923b363a76cb21741f92f30
+GET https://petadoptionapi.vercel.app/api/v1/pets/6923b363a76cb21741f92f30
 Content-Type: application/json
 
 
 ### Update pet
-PUT http://localhost:3000/api/v1/pets/6923b363a76cb21741f92f30
+PUT https://petadoptionapi.vercel.app/api/v1/pets/692fe5dafedb9159a1bcf89b
 Content-Type: application/json
 
 {
-  "name": "Bella Upasdaddated",
+  "name": "Bea",
   "species": "Dog",
   "age": 4,
   "breed": "Golden Retriever",
@@ -91,5 +91,5 @@ PUT http://localhost:3000/api/v1/adoptions/68fee05f27ab0247a0e41de1
 Content-Type: application/json
 
 {
-  "status": "approved", 
+  "status": "Approved"
 }

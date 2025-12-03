@@ -6,7 +6,6 @@ import petRoutes from "./routes/petRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import adoptionRoutes from "./routes/adoptionRoutes.js";
 import { swaggerSpec } from "./config/swagger.js";
-import { requestLogger, addTimeStamp } from "./middleware/customMiddleware.js";
 import { globalErrorHandler } from "./middleware/errorHandling.js";
 import { urlVersioning } from "./middleware/apiVersioning.js";
 import rateLimiter from "./middleware/rateLimiting.js";
@@ -20,13 +19,8 @@ app.use("/api-docs-assets", express.static(swaggerUiAssetPath.getAbsoluteFSPath(
 
 app.use(express.static("public"));
 
-
-
-app.use(requestLogger);
-app.use(addTimeStamp);
-
 app.use(configureCors());
-app.use(rateLimiter(100, 15 * 60 * 1000));
+app.use(rateLimiter(100, 15*60*1000));
 app.use(express.json());
 
 app.use(globalErrorHandler);
@@ -42,7 +36,7 @@ app.use("/api/v1/pets", petRoutes);
 app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/adoptions", adoptionRoutes);
 
-// Swagger UI (Vercel-safe version)
+// Swagger UI 
 app.get("/api-docs", (req, res) => {
   res.send(`
     <!DOCTYPE html>
