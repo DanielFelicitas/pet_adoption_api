@@ -37,6 +37,8 @@ app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/adoptions", adoptionRoutes);
 
 //swagger documentation route
+
+
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
